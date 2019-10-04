@@ -1,0 +1,15 @@
+Describe attorney#util
+  Describe #mode()
+    It returns 'pipe' for '/tmp/nvim.sock'
+      Assert Equals(attorney#util#mode('/tmp/nvim.sock'), 'pipe')
+    End
+
+    It returns 'tcp' for '0.0.0.0:10000'
+      Assert Equals(attorney#util#mode('0.0.0.0:10000'), 'tcp')
+    End
+
+    It returns 'tcp' for ':10000'
+      Assert Equals(attorney#util#mode(':10000'), 'tcp')
+    End
+  End
+End
